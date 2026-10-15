@@ -1,0 +1,4 @@
+/* EB Garamond, self-hosted. License: SIL Open Font License 1.1 (assets/fonts/eb-garamond/OFL.txt). No credit required on the site. */
+@font-face { font-family: "EB Garamond"; src: url("../../fonts/eb-garamond/EBGaramond.woff") format("woff"); font-weight: 400 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "EB Garamond"; src: url("../../fonts/eb-garamond/EBGaramond-Italic.woff") format("woff"); font-weight: 400 800; font-style: italic; font-display: swap; }
+:root { --font: "EB Garamond", Garamond, Georgia, serif; --font-scale: 1.13; }

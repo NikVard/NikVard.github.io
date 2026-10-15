@@ -1,0 +1,48 @@
+---
+title: Home
+---
+<aside class="side home-side">
+  {% include avatar.svg %}
+  <div class="contact">
+    <ul class="profile-links">
+      <li><a href="{{ site.links.linkedin }}">{% include icons/linkedin.svg %}<span>LinkedIn</span></a></li>
+      <li><a href="{{ site.links.orcid }}">{% include icons/orcid.svg %}<span>ORCID</span></a> <span class="orcid-id">{{ site.links.orcid | remove: "https://orcid.org/" }}</span></li>
+      <li><a href="{{ site.links.scholar }}">{% include icons/scholar.svg %}<span>Google Scholar</span></a></li>
+      <li><a href="{{ site.links.github }}">{% include icons/github.svg %}<span>GitHub</span></a></li>
+      <li><a href="mailto:{{ site.email }}">{% include icons/email.svg %}<span>Email</span></a></li>
+    </ul>
+    <p class="where">Philadelphia, open to relocating.</p>
+  </div>
+</aside>
+
+<p class="lede">I study what the brain's electrical activity can tell us about psychiatric illness, and how to use it to steer neuromodulation.</p>
+
+<div class="prose">
+<p>I am a postdoctoral researcher in the Department of Neurosurgery at the University of Pennsylvania, working in the Halpern and Scangos Labs. I develop electrophysiological biomarkers from human intracranial recordings (stereo-EEG, ECoG, local field potentials) in patients with treatment-refractory obsessive-compulsive disorder, substance use disorder and loss-of-control eating, with the aim of guiding adaptive deep brain stimulation, TMS and focused ultrasound.</p>
+<p>I trained as an electrical engineer at the Technical University of Crete, studied biomedical engineering at TU Delft, and did my Ph.D. in neuroscience at the University of Bordeaux, where I modeled and tested hippocampal stimulation for memory disorders.</p>
+<p>I am open to industry roles in neurotechnology and brain-computer interfaces. <a href="mailto:{{ site.email }}">Write to me</a>.</p>
+</div>
+
+<h2>Now</h2>
+<ul class="entries">
+  {% assign projects = site.projects | sort: "order" %}
+  {% for p in projects %}{% if p.current %}
+  <li><span class="side">{{ p.period }}</span><a class="title" href="{{ p.url | relative_url }}">{{ p.title }}</a><p>{{ p.short }}</p></li>
+  {% endif %}{% endfor %}
+</ul>
+<p><a href="{{ '/projects/' | relative_url }}">All projects, including earlier work</a></p>
+
+{% if site.posts.size > 0 %}
+<h2>From the notebook</h2>
+<ul class="notes-list">
+  {% for post in site.posts limit: 3 %}
+  <li><time class="side" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<h2>Selected publications</h2>
+<ul class="pubs">
+  {% for p in site.data.publications.published %}{% if p.selected %}{% include pub.html p=p %}{% endif %}{% endfor %}
+</ul>
+<p><a href="{{ '/publications/' | relative_url }}">All publications, talks and work in preparation</a></p>

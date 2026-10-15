@@ -1,0 +1,17 @@
+---
+title: Notes
+---
+<h1>Notes</h1>
+<p>A working notebook: thoughts on research, papers and methods I find interesting, and the occasional life update. Follow along by <a href="{{ '/notes/feed.xml' | relative_url }}">RSS</a>.</p>
+
+{% assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+{% for year in by_year %}
+<h2>{{ year.name }}</h2>
+<ul class="notes-list">
+  {% for post in year.items %}
+  <li><time class="side" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="quiet">No notes yet.</p>
+{% endfor %}

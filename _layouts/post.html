@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="post">
+  <p class="crumb"><a href="{{ '/notes/' | relative_url }}">Notes</a></p>
+  <h1>{{ page.title }}</h1>
+  <aside class="side post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>{% if page.tags.size > 0 %}<br>filed under {{ page.tags | join: ", " }}{% endif %}</aside>
+  <div class="prose">
+  {{ content }}
+  </div>
+  {% if page.previous or page.next %}
+  <nav class="post-nav" aria-label="More notes">
+    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}">Older: {{ page.previous.title }}</a>{% endif %}
+    {% if page.next %}<a href="{{ page.next.url | relative_url }}">Newer: {{ page.next.title }}</a>{% endif %}
+  </nav>
+  {% endif %}
+</article>

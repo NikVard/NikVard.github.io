@@ -1,0 +1,1 @@
+<svg class="icon moon" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><use href="{{ '/assets/svg/icons.svg' | relative_url }}#moon"/></svg>

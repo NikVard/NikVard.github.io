@@ -1,0 +1,1 @@
+<svg class="avatar" viewBox="0 0 128 128" role="img" aria-label="NV monogram"><use href="{{ '/assets/svg/avatar.svg' | relative_url }}#img"/></svg>

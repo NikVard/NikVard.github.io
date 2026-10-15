@@ -1,0 +1,58 @@
+# Publications. Newest first within each group.
+# Put your own name exactly as "Vardalakis N." so it is highlighted automatically.
+# selected: true  -> also shown on the home page.
+
+published:
+  - title: High-accuracy electrode implantation in deep brain structures using multi-camera neuronavigation in non-human primates
+    authors: Gupta A., Boissenin A., Vardalakis N., Taillade M., Orignac H., Biendon N., Dovero S., Nguyen T.-H., Sadoun A., Wagner F.B.
+    venue: Journal of Neural Engineering 22(5), 056039
+    year: 2025
+    url: https://doi.org/10.1088/1741-2552/ae135b
+    project: /projects/nhp-neuronavigation/
+    selected: true
+
+  - title: A dynamical computational model of theta generation in hippocampal circuits to study theta–gamma oscillations during neurostimulation
+    authors: Vardalakis N., Aussel A., Rougier N.P., Wagner F.B.
+    venue: eLife 12, RP87356
+    year: 2024
+    url: https://doi.org/10.7554/eLife.87356
+    project: /projects/hippocampal-theta-model/
+    note: First author
+    selected: true
+
+  - title: "Neuroprosthetics: from sensorimotor to cognitive disorders"
+    authors: Gupta A., Vardalakis N., Wagner F.B.
+    venue: Communications Biology 6 (review)
+    year: 2023
+    url: https://doi.org/10.1038/s42003-022-04390-w
+    selected: true
+
+in_preparation:
+  - title: Electrical stimulation of the hippocampus and entorhinal area transiently disrupts associative memory in non-human primates
+    authors: Boissenin A., Gupta A., Taillade M., Vardalakis N., Nguyen T.H., Orignac H., Sadoun A., Wagner F.B.
+    status: Submitted
+    project: /projects/nhp-neuronavigation/
+
+  - title: Patient-specific network connectivity predicts deep brain stimulation response in obsessive-compulsive disorder
+    authors: Seilheimer R.L., Vardalakis N., et al.
+    note: Co-first author
+    project: /projects/ocd-state-decoding/
+
+  - title: A reproducible safety assessment model for concurrent transcranial magnetic stimulation with implanted intracranial EEG electrodes
+    authors: Chang et al.
+
+talks:
+  - when: June 2023
+    title: The effects of single-pulse electrical stimulation of the hippocampal formation on memory-related oscillations, a computational study
+    where: 1st Congress of the Deep Brain Stimulation Society, Grenoble
+  - when: May 2023
+    title: Modeling neurostimulation in hippocampal circuits under dynamical theta oscillatory drive
+    where: IMN scientific day, Bordeaux
+  - when: July 2022
+    title: A hybrid computational model of the hippocampal formation to replicate theta–gamma PAC and theta phase reset during neurostimulation
+    where: FENS Forum and ENCODS satellite, Paris
+  - when: June 2022
+    title: "Neuromodulation of memory-related oscillations: a hybrid computational model of the hippocampal formation"
+    where: IMN scientific day, Bordeaux
+
+reviewer: Communications Biology, Journal of Neural Engineering, Frontiers in Neural Circuits

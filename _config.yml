@@ -1,0 +1,58 @@
+title: Nikolaos Vardalakis
+author: Nikolaos Vardalakis
+description: >-
+  Neuroscientist and engineer working on electrophysiological biomarkers from
+  human intracranial recordings for adaptive neuromodulation.
+tagline: Neuroscientist and engineer, human intracranial electrophysiology
+
+# If you publish at https://nikvard.github.io leave baseurl empty.
+# If you publish at https://nikvard.github.io/<repo-name>, set baseurl: /<repo-name>
+url: https://nikvard.github.io
+baseurl: ""
+
+email: nik.vardalakis.work@proton.me
+links:
+  github: https://github.com/NikVard
+  linkedin: https://www.linkedin.com/in/nikolaos-vardalakis
+  orcid: https://orcid.org/0000-0002-5436-4091
+  scholar: https://scholar.google.com/citations?user=7FiP6EAAAAAJ
+cv: /assets/Vardalakis_CV.pdf
+
+# Typeface, hosted on this site (no Google Fonts). Choices: plex-serif, eb-garamond, newsreader
+font: plex-serif
+
+nav:
+  - title: Home
+    url: /
+  - title: Projects
+    url: /projects/
+  - title: Publications
+    url: /publications/
+  - title: Notes
+    url: /notes/
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post, permalink: /notes/:year/:slug/ }
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+  - scope: { path: "" }
+    values: { layout: default }
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+feed:
+  path: notes/feed.xml
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude: [README.md, Gemfile, Gemfile.lock, vendor, tools]

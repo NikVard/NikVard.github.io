@@ -1,0 +1,4 @@
+/* Newsreader, self-hosted. License: SIL Open Font License 1.1 (assets/fonts/newsreader/OFL.txt). No credit required on the site. */
+@font-face { font-family: "Newsreader"; src: url("../../fonts/newsreader/Newsreader.woff") format("woff"); font-weight: 200 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Newsreader"; src: url("../../fonts/newsreader/Newsreader-Italic.woff") format("woff"); font-weight: 200 800; font-style: italic; font-display: swap; }
+:root { --font: "Newsreader", Georgia, serif; --font-scale: 1.04; }

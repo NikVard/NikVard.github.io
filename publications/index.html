@@ -1,0 +1,25 @@
+---
+title: Publications
+---
+<h1>Publications</h1>
+<p>The full, always-current list is on <a href="{{ site.links.scholar }}">Google Scholar</a>.</p>
+
+<h2>Journal articles</h2>
+<ul class="pubs">
+  {% for p in site.data.publications.published %}{% include pub.html p=p %}{% endfor %}
+</ul>
+
+<h2>Submitted and in preparation</h2>
+<ul class="pubs">
+  {% for p in site.data.publications.in_preparation %}{% include pub.html p=p %}{% endfor %}
+</ul>
+
+<h2>Talks and posters</h2>
+<ul class="entries">
+  {% for t in site.data.publications.talks %}
+  <li><span class="side">{{ t.when }}<br>{{ t.where }}</span>{{ t.title }}</li>
+  {% endfor %}
+</ul>
+
+<h2>Peer review</h2>
+<p>Reviewer for {{ site.data.publications.reviewer }}.</p>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <script>
+    // Apply a saved light/dark choice before the page paints; otherwise follow the device.
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" id="font-css" href="{{ '/assets/css/fonts/' | append: site.font | append: '.css' | relative_url }}">
+  {% feed_meta %}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site-header">
+    <figure class="mark">
+      {% include waterfall.svg %}
+      <figcaption>Theta waxing and waning, one spectrum per moment (illustration). Adapted from a figure by <a href="https://github.com/rougier">Nicolas&nbsp;P.&nbsp;Rougier</a>; thank you, Nicolas!</figcaption>
+    </figure>
+    <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <p class="site-tagline">{{ site.tagline }}</p>
+    <nav aria-label="Main">
+      <ul>
+        {% for item in site.nav %}
+          {% assign is_current = false %}
+          {% if item.url == '/' and page.url == '/' %}{% assign is_current = true %}
+          {% elsif item.url != '/' and page.url contains item.url %}{% assign is_current = true %}{% endif %}
+          <li><a href="{{ item.url | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+        <li><a href="{{ site.cv | relative_url }}">CV</a></li>
+        <li><button class="theme-toggle" type="button" aria-label="Switch to dark mode">{% include icons/moon.svg %}{% include icons/sun.svg %}</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    <p><a href="{{ site.links.github }}">GitHub</a>, <a href="{{ site.links.linkedin }}">LinkedIn</a>, <a href="{{ site.links.orcid }}">ORCID</a>, <a href="{{ site.links.scholar }}">Google Scholar</a>, or follow the notes by <a href="{{ '/notes/feed.xml' | relative_url }}">RSS</a>.</p>
+    <p class="quiet">Off the clock: bouldering, hiking, and slow games of chess. No cookies, no trackers. Updated {{ site.time | date: "%B %Y" }}.</p>
+  </footer>
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    function current() { return root.getAttribute('data-theme') || (mq.matches ? 'dark' : 'light'); }
+    function label() { btn.setAttribute('aria-label', current() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'); }
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      label();
+    });
+    mq.addEventListener && mq.addEventListener('change', label);
+    label();
+  })();
+</script>
+</body>
+</html>

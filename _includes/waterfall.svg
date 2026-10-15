@@ -1,0 +1,1 @@
+<svg class="waterfall" viewBox="0 0 600 408" role="img" aria-label="A waterfall of brain-signal spectra over time, with a theta peak rising and falling"><use href="{{ '/assets/svg/waterfall.svg' | relative_url }}#img"/></svg>

@@ -1,0 +1,6 @@
+<li>
+  {% if include.p.year %}<span class="side">{{ include.p.year }}{% if include.p.note %}, {{ include.p.note | downcase }}{% endif %}</span>{% elsif include.p.note %}<span class="side">{{ include.p.note }}</span>{% endif %}
+  {% if include.p.url %}<a class="title" href="{{ include.p.url }}">{{ include.p.title }}</a>{% else %}<span class="title">{{ include.p.title }}</span>{% endif %}
+  <span class="authors">{{ include.p.authors | replace: "Vardalakis N.", '<span class="me">Vardalakis N.</span>' }}</span>
+  <span class="venue">{% if include.p.venue %}<em>{{ include.p.venue }}</em>{% else %}{{ include.p.status | default: "In preparation" }}{% endif %}{% if include.p.project %}. <a href="{{ include.p.project | relative_url }}">Project page</a>{% endif %}</span>
+</li>

@@ -1,0 +1,28 @@
+---
+title: Projects
+---
+{% assign projects = site.projects | sort: "order" %}
+<h1>Projects</h1>
+<p>What I am working on now, and what came before. Ongoing work is described at the level of the question and my role; details follow once it is published.</p>
+
+<h2>Current</h2>
+<ul class="entries">
+  {% for p in projects %}{% if p.current %}
+  <li>
+    <span class="side">{{ p.period }}</span>
+    <a class="title" href="{{ p.url | relative_url }}">{{ p.title }}</a>
+    <p>{{ p.short }}</p>
+  </li>
+  {% endif %}{% endfor %}
+</ul>
+
+<h2>Earlier</h2>
+<ul class="entries">
+  {% for p in projects %}{% unless p.current %}
+  <li>
+    <span class="side">{{ p.period }}</span>
+    <a class="title" href="{{ p.url | relative_url }}">{{ p.title }}</a>
+    <p>{{ p.short }}</p>
+  </li>
+  {% endunless %}{% endfor %}
+</ul>

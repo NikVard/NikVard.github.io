@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="project">
+  <p class="crumb"><a href="{{ '/projects/' | relative_url }}">Projects</a></p>
+  <h1>{{ page.title }}</h1>
+  <aside class="side">
+    <dl class="facts">
+      <dt>When</dt><dd>{{ page.period }}</dd>
+      <dt>Where</dt><dd>{{ page.place }}</dd>
+      <dt>My role</dt><dd>{{ page.role }}</dd>
+      {% if page.status %}<dt>Status</dt><dd>{{ page.status }}</dd>{% endif %}
+      {% if page.data %}<dt>Data</dt><dd>{{ page.data }}</dd>{% endif %}
+    </dl>
+  </aside>
+  <div class="prose">
+  {{ content | replace: "Vardalakis N.", '<span class="me">Vardalakis N.</span>' }}
+  </div>
+</article>
