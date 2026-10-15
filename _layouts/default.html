@@ -18,7 +18,7 @@
   <header class="site-header">
     <figure class="mark">
       {% include waterfall.svg %}
-      <figcaption>Theta waxing and waning, one spectrum per moment (illustration). Adapted from a figure by <a href="https://github.com/rougier">Nicolas&nbsp;P.&nbsp;Rougier</a>; thank you, Nicolas!</figcaption>
+      <figcaption>Brain waves rising and falling in synchrony (illustration). Adapted from a figure by <a href="https://github.com/rougier">Nicolas&nbsp;P.&nbsp;Rougier</a>; thank you, Nicolas!</figcaption>
     </figure>
     <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <p class="site-tagline">{{ site.tagline }}</p>
@@ -61,6 +61,21 @@
     });
     mq.addEventListener && mq.addEventListener('change', label);
     label();
+  })();
+</script>
+<script>
+  /* Links that leave this site, and PDFs such as the CV, open in a new tab. */
+  (function () {
+    var links = document.querySelectorAll('a[href]');
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i], u;
+      try { u = new URL(a.getAttribute('href'), location.href); } catch (e) { continue; }
+      var web = u.protocol === 'http:' || u.protocol === 'https:';
+      if (web && (u.host !== location.host || /\.pdf$/i.test(u.pathname))) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      }
+    }
   })();
 </script>
 </body>
