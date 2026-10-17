@@ -29,6 +29,11 @@ The tricky part is that three separate recording systems each keep their own clo
 
 With the recordings aligned, I compare the strength of fast frontal rhythms when symptoms are provoked and when they are not.
 
+<figure class="illus">
+  {% include illustrations/ocd-gamma.svg %}
+  <figcaption>What we look for: fast frontal (gamma) power climbing during provocations (left), and the same recording cut into 30-second windows, rest against provoked (right). Made-up numbers, not study results.</figcaption>
+</figure>
+
 ## Highlights
 
 - A practical method for synchronising two implanted stimulators with scalp EEG and behaviour, which is usually one of the hardest parts of this kind of study.

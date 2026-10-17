@@ -16,6 +16,10 @@ links:
   linkedin: https://www.linkedin.com/in/nikolaos-vardalakis
   orcid: https://orcid.org/0000-0002-5436-4091
   scholar: https://scholar.google.com/citations?user=7FiP6EAAAAAJ
+# Visit counter (GoatCounter: free, open source, no cookies). Put your site code here,
+# e.g. "nikvard" for nikvard.goatcounter.com. Leave empty to switch counting off.
+goatcounter: ""
+
 cv: /assets/Vardalakis_CV.pdf
 
 # Typeface, hosted on this site (no Google Fonts). Choices: plex-serif, eb-garamond, newsreader

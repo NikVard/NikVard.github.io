@@ -40,6 +40,11 @@ STYLE = {
     "lbl": "font:italic 12.5px var(--font);fill:var(--slate)",
     "strong": "font-style:normal;font-weight:600;fill:var(--ink)",
     "acc-text": "fill:var(--accent)",
+    "box": "fill:var(--w0);stroke:var(--slate);stroke-width:1",
+    "box-acc": "fill:var(--w1);stroke:var(--accent);stroke-width:1.2",
+    "med": "stroke:var(--ink);stroke-width:2;stroke-linecap:round",
+    "dot": "fill:var(--ink);opacity:.4;stroke:none",
+    "dot-acc": "fill:var(--accent);opacity:.65;stroke:none",
 }
 
 
@@ -189,3 +194,52 @@ for d, lab in [(104, "near the surface: a small miss"), (deep - 6, "at depth: mi
 body.append(text(cx + 16, top + 22, "small tilt", cls="lbl acc-text"))
 body.append(text(cx - 10, 130, "planned path", anchor="end"))
 svg("nhp-depth.svg", W, H, "Illustration: a path tilted slightly at the skull drifts further from the planned path the deeper it goes.", body)
+
+# 5. Frontal biomarkers: gamma power rises during provocations (left), summarised per window (right)
+rng = np.random.default_rng(11)
+W, H = 640, 230
+top, bot = 34, 196                      # shared power axis for both panels
+def ypow(p): return bot - p * (bot - top)
+n = 900
+t = np.linspace(0, 30, n)               # minutes
+x0, x1 = 34, 420
+xs = x0 + (x1 - x0) * t / 30
+prov = [(6, 11), (17, 22.5)]
+on = np.zeros(n)
+for a, b in prov:
+    on += 1 / (1 + np.exp(-(t - a) * 2.5)) * (1 - 1 / (1 + np.exp(-(t - b) * 2.5)))
+power = np.clip(0.26 + 0.36 * on + smooth(rng.normal(0, 1, n), 6) * 0.22, 0.04, 0.96)
+body = []
+for a, b in prov:
+    xa, xb = x0 + (x1 - x0) * a / 30, x0 + (x1 - x0) * b / 30
+    body.append(f'<rect class="band" x="{xa:.1f}" y="{top - 8}" width="{xb - xa:.1f}" height="{bot - top + 8}"/>')
+    body.append(text((xa + xb) / 2, top - 13, "provoked", anchor="middle"))
+body.append(f'<line class="thin" x1="{x0}" y1="{bot}" x2="{x1}" y2="{bot}"/>')
+body.append(f'<line class="thin" x1="{x0}" y1="{top - 8}" x2="{x0}" y2="{bot}"/>')
+body.append(f'<path class="acc" d="{path(xs, ypow(power))}"/>')
+body.append(f'<text class="lbl" transform="translate({x0 - 10},{(top + bot) / 2}) rotate(-90)" text-anchor="middle">frontal gamma power</text>')
+body.append(text(x1, bot + 18, "time (minutes)", anchor="end"))
+
+# right: one point per 30-second window, rest vs provoked, on the same power axis
+win = n // 60
+centres = np.arange(win // 2, n, win)
+vals = np.clip(power[centres] + rng.normal(0, .07, len(centres)), .04, .96)   # window-to-window spread
+labels = on[centres] > 0.5
+for k, (name, mask, cx, box, dot) in enumerate([("rest", ~labels, 490, "box", "dot"),
+                                                ("provoked", labels, 580, "box-acc", "dot-acc")]):
+    v = vals[mask]
+    q1, med, q3 = np.percentile(v, [25, 50, 75])
+    lo = v[v >= q1 - 1.5 * (q3 - q1)].min(); hi = v[v <= q3 + 1.5 * (q3 - q1)].max()
+    bw = 30
+    body.append(f'<line class="thin" x1="{cx}" y1="{ypow(hi):.1f}" x2="{cx}" y2="{ypow(lo):.1f}"/>')
+    for e in (lo, hi):
+        body.append(f'<line class="thin" x1="{cx - 7}" y1="{ypow(e):.1f}" x2="{cx + 7}" y2="{ypow(e):.1f}"/>')
+    body.append(f'<rect class="{box}" x="{cx - bw / 2}" y="{ypow(q3):.1f}" width="{bw}" height="{ypow(q1) - ypow(q3):.1f}" rx="2"/>')
+    body.append(f'<line class="med" x1="{cx - bw / 2}" y1="{ypow(med):.1f}" x2="{cx + bw / 2}" y2="{ypow(med):.1f}"/>')
+    jit = rng.uniform(-1, 1, len(v)) * 9
+    for jv, pv in zip(jit, v):
+        body.append(f'<circle class="{dot}" cx="{cx + 26 + jv:.1f}" cy="{ypow(pv):.1f}" r="2.1"/>')
+    body.append(text(cx + 8, bot + 18, name, anchor="middle"))
+body.append(f'<line class="thin" x1="460" y1="{bot}" x2="625" y2="{bot}"/>')
+body.append(text(460, top - 13, "per 30-second window", cls="lbl"))
+svg("ocd-gamma.svg", W, H, "Illustration with made-up data: frontal gamma power rises during two provocation periods; summarised per window, provoked periods show higher power than rest.", body)
