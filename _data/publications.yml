@@ -28,15 +28,18 @@ published:
     selected: true
 
 in_preparation:
+  - title: Patient-specific subnetwork connectivity predicts deep brain stimulation response in obsessive-compulsive disorder
+    authors: Seilheimer R.L., Vardalakis N., et al.
+    venue: medRxiv (preprint)
+    year: 2026
+    url: https://doi.org/10.64898/2026.10.19.26365556
+    note: Co-first author
+    project: /projects/ocd-state-decoding/
+
   - title: Electrical stimulation of the hippocampus and entorhinal area transiently disrupts associative memory in non-human primates
     authors: Boissenin A., Gupta A., Taillade M., Vardalakis N., Nguyen T.H., Orignac H., Sadoun A., Wagner F.B.
     status: Submitted
     project: /projects/nhp-neuronavigation/
-
-  - title: Patient-specific network connectivity predicts deep brain stimulation response in obsessive-compulsive disorder
-    authors: Seilheimer R.L., Vardalakis N., et al.
-    note: Co-first author
-    project: /projects/ocd-state-decoding/
 
   - title: A reproducible safety assessment model for concurrent transcranial magnetic stimulation with implanted intracranial EEG electrodes
     authors: Chang et al.

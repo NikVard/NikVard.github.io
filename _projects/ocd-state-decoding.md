@@ -4,7 +4,7 @@ short: Recording brain activity at the bedside while people with severe OCD face
 period: 2024 to present
 place: Halpern Lab, Department of Neurosurgery, University of Pennsylvania
 role: Co-first author. Data collection at the bedside, experiment design and analysis.
-status: Manuscript in preparation
+status: 'Preprint on <a href="https://doi.org/10.64898/2026.10.19.26365556">medRxiv</a> (2026)'
 data: Recordings from electrodes placed inside the brain (stereo-EEG), plus heart rate and other body signals
 current: true
 order: 1
@@ -39,5 +39,5 @@ From the recordings I extracted the strength of brain rhythms at different frequ
 
 ## Related
 
-- Seilheimer R.L., Vardalakis N., et al. *Patient-specific network connectivity predicts deep brain stimulation response in obsessive-compulsive disorder.* In preparation.
+- Seilheimer R.L., Vardalakis N., et al. [*Patient-specific subnetwork connectivity predicts deep brain stimulation response in obsessive-compulsive disorder.*](https://doi.org/10.64898/2026.10.19.26365556) medRxiv preprint, 2026.
 - Companion project: [spotting distress from frontal brain rhythms]({{ '/projects/ocd-frontal-biomarkers/' | relative_url }}).
