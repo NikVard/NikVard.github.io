@@ -3,6 +3,12 @@
 # selected: true  -> also shown on the home page.
 
 published:
+  - title: A reproducible safety assessment model for concurrent transcranial magnetic stimulation with implanted intracranial electroencephalography electrodes
+    authors: Chang A., Michiels J., Campos G., Nho Y., Duprat R., Vardalakis N., Koluda A., Qiu L., Choi W., Seilheimer R., Ganguly T.M., Hamilton R.H., Barbosa D.A.N., Scangos K., Oathes D., Halpern C., Vitale F.
+    venue: Brain Stimulation 19(6), 103238
+    year: 2026
+    url: https://doi.org/10.1016/j.brs.2026.103238
+
   - title: High-accuracy electrode implantation in deep brain structures using multi-camera neuronavigation in non-human primates
     authors: Gupta A., Boissenin A., Vardalakis N., Taillade M., Orignac H., Biendon N., Dovero S., Nguyen T.-H., Sadoun A., Wagner F.B.
     venue: Journal of Neural Engineering 22(5), 056039
@@ -40,9 +46,6 @@ in_preparation:
     authors: Boissenin A., Gupta A., Taillade M., Vardalakis N., Nguyen T.H., Orignac H., Sadoun A., Wagner F.B.
     status: Submitted
     project: /projects/nhp-neuronavigation/
-
-  - title: A reproducible safety assessment model for concurrent transcranial magnetic stimulation with implanted intracranial EEG electrodes
-    authors: Chang et al.
 
 talks:
   - when: June 2023
