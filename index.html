@@ -43,6 +43,7 @@ title: Home
 
 <h2>Selected publications</h2>
 <ul class="pubs">
+  {% for p in site.data.publications.in_preparation %}{% if p.selected %}{% include pub.html p=p %}{% endif %}{% endfor %}
   {% for p in site.data.publications.published %}{% if p.selected %}{% include pub.html p=p %}{% endif %}{% endfor %}
 </ul>
 <p><a href="{{ '/publications/' | relative_url }}">All publications, talks and work in preparation</a></p>
