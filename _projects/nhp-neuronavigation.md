@@ -4,7 +4,7 @@ short: Making deep brain implants more accurate, then testing how stimulating th
 period: 2020 to 2024 (Ph.D.)
 place: Institute of Neurodegenerative Diseases (CNRS), University of Bordeaux, with Fabien Wagner
 role: Navigation testing and surgical pipeline; recording experiments, hardware and analysis
-status: Navigation study published (Journal of Neural Engineering, 2025). Memory study submitted.
+status: Navigation study published (Journal of Neural Engineering, 2025). Memory study preprint on bioRxiv (2026).
 data: Recordings from the brain surface (ECoG) and from deep electrodes in non-human primates
 current: false
 order: 5
@@ -37,4 +37,4 @@ Stimulating and recording on the same equipment can swamp the recording, so I bu
 ## Output
 
 - Gupta A., Boissenin A., Vardalakis N., et al. [High-accuracy electrode implantation in deep brain structures using multi-camera neuronavigation in non-human primates](https://doi.org/10.1088/1741-2552/ae135b). *Journal of Neural Engineering* (2025).
-- Boissenin A., Gupta A., Taillade M., Vardalakis N., et al. *Electrical stimulation of the hippocampus and entorhinal area transiently disrupts associative memory in non-human primates.* Submitted.
+- Boissenin A., Gupta A., Taillade M., Vardalakis N., et al. [Electrical stimulation of the hippocampus and entorhinal area transiently disrupts associative memory in non-human primates](https://doi.org/10.64898/2026.10.28.762322). *bioRxiv* (2026, preprint).

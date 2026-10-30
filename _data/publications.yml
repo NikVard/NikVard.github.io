@@ -45,7 +45,9 @@ in_preparation:
 
   - title: Electrical stimulation of the hippocampus and entorhinal area transiently disrupts associative memory in non-human primates
     authors: Boissenin A., Gupta A., Taillade M., Vardalakis N., Nguyen T.H., Orignac H., Sadoun A., Wagner F.B.
-    status: Submitted
+    venue: bioRxiv (preprint)
+    year: 2026
+    url: https://doi.org/10.64898/2026.10.28.762322
     project: /projects/nhp-neuronavigation/
 
 talks:
