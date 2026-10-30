@@ -37,4 +37,4 @@ Stimulating and recording on the same equipment can swamp the recording, so I bu
 ## Output
 
 - Gupta A., Boissenin A., Vardalakis N., et al. [High-accuracy electrode implantation in deep brain structures using multi-camera neuronavigation in non-human primates](https://doi.org/10.1088/1741-2552/ae135b). *Journal of Neural Engineering* (2025).
-- Boissenin A., Gupta A., Taillade M., Vardalakis N., et al. [Electrical stimulation of the hippocampus and entorhinal area transiently disrupts associative memory in non-human primates](https://doi.org/10.64898/2026.10.28.762322). *bioRxiv* (2026, preprint).
+- Boissenin A., Gupta A., Taillade M., Vardalakis N., et al. [Gamma and theta-burst stimulation of the hippocampus and entorhinal area transiently disrupts memory](https://doi.org/10.64898/2026.10.28.762322). *bioRxiv* (2026, preprint).
